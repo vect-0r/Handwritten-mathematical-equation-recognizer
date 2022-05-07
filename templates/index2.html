@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handwritten Math Expression Recognition</title>
+      <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel = "stylesheet" href = "../static/style.css">
+</head>
+
+<script>
+    function showloading() {
+        image = document.getElementById('loading_image');
+        image.style.display = 'inline'
+    }
+
+    function hideLoader() {
+        $('#loading').hide();
+    }
+
+    $(window).ready(hideLoader);
+
+    // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+    setTimeout(hideLoader, 20 * 1000);
+</script>
+<body>
+<div id="loading"></div>
+<header class="navbar">
+    
+  <h1  style="color: #3268c7; font-weight: bold; font-family: 'Cambria', cursive, sans-serif; font-size : 70px;  text-align: center; margin-top: 120px;  text-transform: uppercase">Handwritten Math <br>Expression Recognition</h1>
+
+  <form action="/upload2" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;" onsubmit="showloading()">
+  </br>
+    <span class="btn btn-default btn-file">
+        <label for="image" style="color: #3268c7; font-weight: bold; font-family: 'Cambria', cursive, sans-serif; font-size : 20px;  text-align: center; margin-top: 120px;  text-transform: uppercase">Images containing only subscript</label><br><br><input type="file" name="image">
+    </span><br><br>
+        <input type="submit" value="Upload" class="btn btn-primary">
+  </form>
+    <br>
+    <!-- <div style="text-align: center; margin-top: 20px">
+        <img style="max-width: 600px" src="{{ url_for('static', filename='tintin.jpg') }}"/>
+    </div>
+    <div style="text-align: center; margin-top: 20px">
+        <img style="max-width: 600px" src="{{ url_for('static', filename='tintin1.jpg') }}"/>
+    </div> -->
+    <div style="text-align: center">
+        <img id="loading_image" style="display: none" src="{{ url_for('static', filename='loading.gif')}}">
+    </div>
+    <script>
+        $('#canvas').mousedown(function(e){
+            var mouseX = e.pageX - this.offsetLeft;
+            var mouseY = e.pageY - this.offsetTop;
+                    
+            paint = true;
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+            redraw();
+        });
+
+        $('#canvas').mousemove(function(e){
+            if(paint){
+                addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                redraw();
+            }
+        });
+
+        $('#canvas').mouseup(function(e){
+            paint = false;
+        });
+
+        $('#canvas').mouseleave(function(e){
+            paint = false;
+        });
+
+        var clickX = new Array();
+        var clickY = new Array();
+        var clickDrag = new Array();
+        var paint;
+
+        function addClick(x, y, dragging)
+        {
+            clickX.push(x);
+            clickY.push(y);
+            clickDrag.push(dragging);
+        }
+    </script>
+</header>
+
+</body>
+</html>

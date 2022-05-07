@@ -1,0 +1,38 @@
+body {
+    background: #acb6e5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+input[type=submit]{
+    background-color: lightskyblue;
+    border: 2px solid dodgerblue;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 30px;
+    .button2 {border-radius: 4px;}
+}
+input[type = submit] :hover{
+    background-color: white; /* Green */
+    color: white;
+}
+.h1 {
+    font-size: 50px !important;
+}
+input[type=file]::file-selector-button {
+    border: 2px solid #6c5ce7;
+    border-radius: .2em;
+    background-color: #a29bfe;
+    transition: 1s;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+}

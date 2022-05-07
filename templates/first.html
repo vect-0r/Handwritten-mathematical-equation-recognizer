@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel = "stylesheet" href = "style1.css">
+    <style>
+        body {
+            background: #acb6e5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #86fde8, #acb6e5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: white; /* Green */
+            border: dodgerblue;
+            color: dodgerblue;
+            padding: 32px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 20px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            font-family: "Calibri";
+            font-size: 20px;
+            border-radius: 3px;
+        }
+        input[type=submit]:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color: dodgerblue; /* Green */
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 style="color: dodgerblue; font-size : 70px; font-weight: bold; font-family: 'Roboto', cursive, sans-serif; text-align: center; margin-top: 120px;  text-transform: uppercase">Please choose one option<br> to open the required portal</h1>
+<h2 style="color: dodgerblue; font-size : 30px; font-weight: bold; font-family: 'Roboto', cursive, sans-serif; text-align: center; margin-top: 40px;  text-transform: uppercase"> Your expression contains : </h2>
+
+<div style = "width: 90%;margin-left:250px;">
+        <form class ="form"method="post" action="/">
+        <input type="submit" value="contains only superscript" name="action1"/>
+        <input type="submit" value="contains superscript and subscript" name="action2" />
+		<input type="submit" value="contains only subscript" name="action3" />
+    </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handwritten Mathematical Equation recognition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+          background: #acb6e5; /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #86fde8, #acb6e5); /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+    </style>
+</head>
+<body>
+
+    <h1 style="color: dodgerblue; font-weight: bold; font-family: 'Cambria', cursive, sans-serif; text-align: center; margin-top: 120px;  text-transform: uppercase">Handwritten Math <br>Expression Recognition</h1>
+<div style="width: 90%; margin: auto; text-align: center">
+    <img src="{{ url_for('send_file', filename=image_file_name)}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+    <p style="font-style: italic">{{ image_file_name }}</p>
+
+    <h3 style="color: dodgerblue; font-weight: bold; font-family: 'Cambria', cursive, sans-serif; text-align: center;margin-top: 40px"><b>Predicted Calculation: <span style="color: green">{{ label }}</span></b></h3>
+     <h3 style = "margin-top: 60px"><a href="/">Back to Home Page</a></h3>
+</div>
+</body>
+
+</html>
